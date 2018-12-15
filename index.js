@@ -20,6 +20,7 @@ const g_width = Math.floor(c_width / sqSize);
 const g_height = Math.floor(c_height / sqSize) + 1;
 
 var l_line;
+var redraw;
 
 w.DEBUG = DEBUG;
 
@@ -92,6 +93,9 @@ function clickEventListener(ev) {
     const x = ev.clientX;
     let kx = Math.floor(x / sqSize);
     l_line.l[kx] ^= 1;
+    if (!playing) {
+        if (redraw) redraw();
+    }
 }
 
 function keyUpEventListener(ev) {
@@ -156,7 +160,10 @@ window.draw = function () {
     ++frame;
     let y_offset = - (frame % period) / period * sqSize;
     window.update();
-    g_grid.draw(sqSize, y_offset, true);
+    redraw = () => {
+        g_grid.draw(sqSize, y_offset, true);
+    }
+    redraw();
 };
 
 window.d = function () {

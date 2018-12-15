@@ -7,7 +7,7 @@ module.exports = (env, argv) => ({
     filename: 'main.js',
     path: path.resolve(__dirname, "dist")
   },
-  devServer: {
+  devServer: {  
     publicPath: "/dist/",
     watchContentBase: true,
     overlay: true,

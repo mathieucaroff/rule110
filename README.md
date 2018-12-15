@@ -1,6 +1,6 @@
-# Webpack-dev-server template
+# Rule 110
 
-A template to get your webpack-based projet started.
+An implementation of the Turing-complete Rule 110 monodimentional simple automaton in JS and canvas.
 
-It is configured to automatically reload your page whenever you save a js file
-and webpack re-pack the project.
+Any key will toggle play/pause.
+Clicking will toggle a cell's living state.
